@@ -23,8 +23,12 @@ function grid (itemCount){
 grid(itemCount);
 
 function resize(){
-    let userInput = prompt ('Please enter a new size 1-49');
+    let userInput = prompt ('Please enter a new size 1-32');
     let num = parseInt(userInput);  
+    if (num>32){
+      num = 16;
+      alert ("enter 1-32")
+    } 
     itemCount = num*num;
 
         //clear current grid
@@ -37,7 +41,7 @@ function resize(){
     
     const gridItem = document.getElementsByClassName('grid-item');
     for (let i = 0; i < gridItem.length; i++) {
-        gridItem[i].style.width = newSize; // Set the width to 300 pixels
+        gridItem[i].style.width = newSize; // Set the width to 30 pixels
         gridItem[i].style.height = newSize;
       }
     console.log(gridItem);  
